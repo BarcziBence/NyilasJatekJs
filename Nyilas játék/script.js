@@ -1,8 +1,9 @@
 
 var IsRunning = false;
 var stateId = 0;
-var timer;
 var correct = 0;
+var timer;
+
 
 function Start(){
     IsRunning = true;
@@ -13,7 +14,7 @@ function Start(){
 function Stop(){
     IsRunning = false;
     clearTimeout(timer);
-    document.getElementById('displayer').innerHTML = 'Átlagos reakcióidő: ' + correct/20 + ' másodperc';
+    document.getElementById('displayer').innerHTML = 'Átlagos reakcióidő: ' + 20/correct + ' másodperc';
 }
 
 function Arrow(dir){
@@ -45,3 +46,5 @@ function Next(){
     return value
     }
 }
+
+  
