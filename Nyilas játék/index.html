@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reakció Játék</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="displayer" id="displayer">
+
+    </div>
+    <div class="button-con">
+        <div class="button-con-row">
+            <button class="arrow-button" onclick="Arrow(1)">↑</button>
+        </div>
+        <div class="button-con-row">
+            <button class="arrow-button" onclick="Arrow(2)">←</button>
+            <button class="arrow-button" onclick="Arrow(3)">↓</button>
+            <button class="arrow-button" onclick="Arrow(4)">→</button>
+        </div>
+        <div class="button-con-row">
+            <button class="game-state-button" onclick="Start()" style="background-color: green;">Start</button>
+            <button class="game-state-button" onclick="Stop()" style="background-color: red;"> Stop</button>
+        </div>
+    </div>
+</body>
+</html>
