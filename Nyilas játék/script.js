@@ -2,27 +2,27 @@
 var IsRunning = false;
 var stateId = 0;
 var correct = 0;
+var incorrect = 0;
 var timer;
-
 
 function Start(){
     IsRunning = true;
     timer = setTimeout(Stop, 20000);
     stateId = Next();
+    correct = 0;
+    incorrect = 0;
 }
 
 function Stop(){
     IsRunning = false;
     clearTimeout(timer);
-    document.getElementById('displayer').innerHTML = 'Átlagos reakcióidő: ' + 20/correct + ' másodperc';
+    document.getElementById('displayer').innerHTML = 'Átlagos reakcióidő: ' + Number.parseFloat(20/correct).toFixed(2) + ' másodperc<br>Helyes találatok: ' + correct + '<br>Helytelen találatok: ' + incorrect;
 }
 
 function Arrow(dir){
-    if(stateId == dir) 
-        { 
-            stateId = Next(); 
-            correct = correct + 1
-        }
+    if(stateId == dir) { correct = correct + 1; }
+    else {incorrect = incorrect + 1; }
+    stateId = Next(); 
     
 }
 
@@ -46,5 +46,27 @@ function Next(){
     return value
     }
 }
+
+document.addEventListener(
+    "keydown",
+    (event) => {
+        var keyName = event.key;
+        switch(keyName){
+            case "ArrowUp":
+                Arrow(1)
+                break;
+            case "ArrowLeft":
+                Arrow(2)
+                break;
+            case "ArrowDown":
+                Arrow(3)
+                break;
+            case "ArrowRight":
+                Arrow(4)
+                break;
+        }
+    }
+)
+
 
   
